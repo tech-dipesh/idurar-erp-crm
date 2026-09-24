@@ -9,13 +9,13 @@ const controllerDirectories = globSync(pattern).map((filePath) => {
   return basename(filePath);
 });
 
-const appControllers = () => {
+const appControllers = async() => {
   const controllers = {};
   const hasCustomControllers = [];
 
-  controllerDirectories.forEach((controllerName) => {
+for (const controllerName of controllerDirectories) {
     try {
-      const customController = require('@/controllers/appControllers/' + controllerName);
+      const customController = await import('@/controllers/appControllers/' + controllerName);
 
       if (customController) {
         hasCustomControllers.push(controllerName);
