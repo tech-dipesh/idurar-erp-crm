@@ -27,7 +27,7 @@ const getLabel = (lang, key) => {
 const useSelector = () => {
   const defaultfilePath = `./translation/en_us`;
 
-  const langFile = require(defaultfilePath);
+  const langFile = import(defaultfilePath);
   return langFile;
 };
 

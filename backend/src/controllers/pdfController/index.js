@@ -9,13 +9,13 @@ import { useMoney, useDate } from '@/settings';
 
 const pugFiles = ['invoice', 'offer', 'quote', 'payment'];
 
-require('dotenv').config({ path: '.env' });
-require('dotenv').config({ path: '.env.local' });
+import('dotenv').config({ path: '.env' });
+import('dotenv').config({ path: '.env.local' });
 
 export async function generatePdf(
   modelName,
   info = { filename: 'pdf_file', format: 'A5', targetLocation: '' },
-  resultz
+  resultz,
   callback
 ) {
   try {

@@ -1,5 +1,5 @@
-require('dotenv').config({ path: '.env' });
-require('dotenv').config({ path: '.env.local' });
+import('dotenv').config({ path: '.env' });
+impore('dotenv').config({ path: '.env.local' });
 import { globSync } from 'glob';
 import { readFileSync } from 'fs';
 import { generate as uniqueId } from 'shortid';
